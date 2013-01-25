@@ -3,7 +3,7 @@ Matfyzacky rezervacni system
 
 Matfyzacky rezervacni system je system k rezervaci listku na zofine.
 
-V podstate neni dobry k nicemu jinemu, nez k rezervaci listku na matfyzackem plese Zofine. Rozhodne by ho nemel nikdo pouzivat :)
+V podstate neni dobry k nicemu jinemu, nez k rezervaci listku na matfyzackem plese na Zofine. A i k tomu neni zdaleka idealni.
 
 Bezpecny by ale mel byt. Protoze verim v jeho bezpecnost, davam jeho kod verejne.
 
