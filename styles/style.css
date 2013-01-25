@@ -1,0 +1,38 @@
+#generovanaMapa {
+    position:relative;
+    text-align: center;
+vertical-align: bottom;
+    font-size:80%;
+}
+
+/*bootstrap si bere "table"... lol*/
+.tablestul {
+    border-radius:5px;
+    box-shadow: black 4px 6px 20px;
+    line-height:100%;
+    color:white;
+}
+
+.seat {
+    width:19px;
+    height:19px;
+/*    box-shadow: black 4px 6px 20px*/
+}
+
+
+@media screen and (min-width: 980px){
+    #nevimSiRadySOdsazenim {
+        height:60px;
+        }
+}
+
+.prispevek {
+    display:block  !important;
+    position:relative  !important;
+    max-width:400px !important;
+    margin-bottom:1em !important;
+}
+
+.clearfix {
+    clear:both;
+}

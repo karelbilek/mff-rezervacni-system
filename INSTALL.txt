@@ -1,0 +1,17 @@
+Co je cca potreba k nove instalaci?
+
+bez mbanky:
+- vyplnit info o databazi do localSettings.php
+- spustit DB import ze souboru basic.sql (obsahuje hlavne planky salu na Zofine... pro jine saly nutno prekreslit :)) )
+- vygenerovat nove barcodes a dat je do databaze
+- cele to probehnout a zmenit vsechny texty, co jsou ruzne
+    - ke konkretnimu plesu jsou hlavne texty z adresaru:
+        - htmlTemplate
+        - actions
+        - mailing
+
+s mbankou:
+- zalozit ucet u mbanky :)
+- doplnit informace o uctu do localSettings (jen heslo) a mbank/mbank.php
+- zalozit sellera s loginem "online"
+- v mbank/mbank.php nastavit spravne cislo tohoto uctu

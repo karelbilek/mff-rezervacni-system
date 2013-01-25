@@ -1,0 +1,447 @@
+﻿body
+{
+	background-color:white;
+	/* rgb(51, 153, 254) */
+  
+  color:black;
+	font-size: small;
+}
+
+.center
+{
+	text-align: center;
+}
+
+hr
+{
+	width: 30%;
+	margin-top: 1em;
+	text-align: center;
+}
+
+.bold 
+{
+	font-weight: bold;
+}
+
+#events
+{
+	width:60%;
+	text-align:center;
+	padding:10px;
+	margin:auto;
+}
+
+#events hr
+{
+	width: 80%;
+	margin: 2em;
+}
+
+#content
+{	
+	border: 1px solid red;
+	border:none;
+  position: relative;
+	/*margin-top: 20px;*/
+}
+
+#logo
+{
+	position: absolute;
+	/*left: 0.5em;*/
+	/*top: 0.5em;*/
+}
+
+
+#header 
+{
+	margin-left: 12em;
+	width: 700px;
+	height: 4em;
+	text-align: center;
+}
+
+#header div.title
+{
+	/*position: relative;*/
+	font-size: 3em;
+	font-family: sans-serif;
+}
+
+#header .sup
+{
+	font-size: 50%;
+	position: relative;
+	top: -1em;
+}
+
+#horizontal-bar
+{
+	margin-left: 5em;
+	margin: 1em 0 0 5em;
+}
+
+#vertical-bar 
+{
+	position: absolute;
+	top: 2em;
+	left: 10em;
+}
+
+#pictures
+{
+	position: relative;
+	top: 5px;
+	left: 120px;
+	height: 80px;
+	width: 680px;
+}
+
+#valid
+{
+	/*position: absolute;
+	top: 40em;	
+	left: 2em;*/
+}
+
+#main
+{
+	/*relikt
+	position: relative; 
+	/*margin-left: 12em; * /
+	width: 700px;
+	margin-left: 200px;*/
+}
+
+/*
+relikty minulosti
+#main div.section
+{
+	text-align: center;
+	margin: 1em;
+}
+*/
+
+#main div.section a
+{
+	text-decoration: underline;
+}
+
+#main div.section .title
+{
+	font-weight: bold;
+}
+
+
+#main div.sell-buttons
+{
+	position: absolute;
+	width: 100%;
+}
+
+#main div.sell-buttons div.back
+{
+	position: absolute;
+	text-align: left;
+}
+
+#main div.sell-buttons div.sell
+{
+	text-align: right;
+}
+
+#main div.sell-buttons input.sell
+{
+	font-size: x-large;
+	margin: 1em;
+	padding: 0.2em;
+}
+
+/*
+relikt
+#main div.content
+{
+    margin: 1em;
+}*/
+
+.type{
+	position:relative;
+	text-align:center;
+	left:-80px;
+	margin-left:20px;
+	float:left;
+}
+
+.type:hover{
+	border-color:white;
+}
+
+
+#title{
+	font-size:15px;
+	font-weight:bold;
+	text-align:center;
+	padding-top:10px;	
+}
+
+
+
+
+#room-model
+{
+	border-color:black;
+	text-align:center; 
+}
+
+#room-model .title
+{
+	font-size: large;
+	margin: 1em;
+}
+
+#room-model a, #room-model img
+{
+}
+
+
+#map:hover{
+	border-color:black;
+	}
+
+
+
+
+#table_head{
+	font-weight:bold;
+	text-align:center;
+	}
+	
+
+/*  ---------- div.res-tickets ------- */	
+div.res-tickets
+{
+	margin-top: 1em;
+	padding:20px;
+	text-align:center;
+}
+
+div.res-tickets table
+{
+	border: 1px solid;
+	width:100%;
+	margin-bottom:1em;
+}
+
+div.res-tickets a
+{
+	text-decoration: underline;
+}
+
+div.res-tickets p
+{
+	margin: 0em;
+}
+
+div.res-tickets div.other-events
+{
+	margin: 1em;	
+}
+
+div.res-tickets div.other-events div.list 
+{
+	border: 1px solid white;
+}
+
+div.res-tickets div.other-events div.list div
+{
+	margin: 0.3em;
+}
+	
+div.res-tickets div.title
+{
+	margin: 1em;	
+}
+
+
+
+/*  ---------- div.sold-result ------- */	
+
+div.sold-result
+{
+	margin-top: 1em;
+}
+
+div.sold-result table
+{
+	border: 1px solid;
+	width:100%;
+	margin-bottom:1em;
+	text-align: center;
+}
+
+/*  ----------  ------- */	
+
+.book {
+	position:relative;
+	float:right;
+	margin-top:20px;
+	top:-10px;	
+	}
+
+
+#info{
+	text-align:center;
+	font-size:15px;
+	width:60%;
+	margin-top:40px;
+	}
+
+#info td{
+	margin:0px;
+	padding:0px;
+	}
+
+#title2{
+	position:relative;
+	top:-15px;
+	font-size:15px;
+	background-color:black;
+	color:white;
+	font-weight:bold;
+	text-align:center;
+	margin:0px;
+	margin-bottom:20px;
+	}
+	
+#button_submit{
+	margin-top:10px;
+	margin-left:20px;
+	}
+
+
+#check_count{
+	margin-top:5px;
+	float:right;
+	}
+
+#customer-list
+{
+	text-align: center;
+	margin-top: 2em;
+}
+
+#customer-list a
+{
+	text-decoration: underline;
+}
+
+#customer-list table
+{
+	border: 1px solid white;
+	margin:auto;
+	border-collapse: collapse;
+}
+	
+#customer-list table td
+{
+	padding-left: 1em;
+	padding-right: 1em;
+	border: 1px solid #D1B79E;
+}
+	
+#res-by-exp 
+{
+	width:60%;
+	text-align: center;
+	margin: 0 auto;
+	padding-bottom: 1em;
+}
+
+#res-by-exp table
+{
+	border: 1px solid white;
+	border-collapse: collapse;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#res-by-exp table td,
+#res-by-exp table th
+{
+	padding: 2px 0.5em;
+}
+
+.seat {
+	width: 15px;
+	height: 15px;
+	text-align:center;
+	color: black;
+	border: 1px solid white;
+	background-color:#AAAAAA;
+	font-size: x-small;
+}	
+	
+.table {
+  border: 1px solid white;
+	background-color:#BBAABB;
+	color: black;
+	text-align: center;
+	line-height: 90%;
+	font-size: small;
+	margin:auto;
+}	
+
+.wall 
+{
+	border: 1px solid white;
+	text-align: center;
+	/*font-size: 0px;*/
+}
+
+div.legend-color
+{
+	width:10px;
+	height:10px;
+	font-size: 0px;
+}
+
+#generovanaMapa {
+    border: solid 1px black;
+}
+
+
+/*.......pĹ™idĂˇno Jendou......*/
+div#horizontal-menu
+{
+	margin-top:0.5em;
+	
+  margin-bottom: 1em;
+  color: black; /* pro lepsi citelnost (zdenek) */
+}
+
+div#horizontal-menu2
+{
+	
+	margin-top:0.5em;
+	
+  margin-bottom: 1em;
+  color: white; 
+}
+
+div#horizontal-menu2 a 
+{
+
+}
+
+div#left-menu
+{
+	border: solid 0.4em #DEA771; background-color: #D1B79E !important; padding: 0.4em;	
+  width: 200px;
+	float: left;
+}
+
+table.history { border: 1px solid #DEA771; }
+table.history td, table.history th { border: 1px solid #D1B79E; }
+table.history { border-collapse: collapse; }
+table.history td { padding: 0.1em 0.5em 0.1em 0.5em; }
