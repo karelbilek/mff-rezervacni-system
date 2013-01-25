@@ -42,7 +42,7 @@ function action_register($loggedIn, $id_spojeni, $dbPrefix, $raw_login, $raw_pas
             if ($result == $OK) {
                  if ($instituce) {
                  
-                  $fh = fopen("stat.txt", 'a');
+                  $fh = fopen("../../ples_stat.txt", 'a');
                   if ($fh){
                      # nechci umirat na tehle blbosti :)
                     fwrite($fh, $instituce . ":" . $jsem . "\n");

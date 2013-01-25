@@ -5,7 +5,7 @@ function log_write($string, $title = "") {
 }
 function logWrite($string, $title = "")
 	{
-		$LogFile = '_log.txt';
+		$LogFile = '../../ples_log.txt';
 				
 			//this is built in PHP function
 		$Addr = GetHostByAddr($_SERVER["REMOTE_ADDR"]);

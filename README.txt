@@ -21,7 +21,7 @@ Ke kodu samotmenu:
 
 Je to pomerne chaoticky kus kodu, ktery byl sdilen z generace na generaci a je videt, ze vyrostl velice organicky jeste v drevnich dobach PHP; a ja (Karel Bilek) ho nikdy nemel odvahu prepisovat do objektu nebo dokonce frameworku. 
 
-Verte mi, ze uz ted je lepsi, nez byl predtim, predtim to byl HODNE velky spaghetti code; ted se aspon volaji funkce.
+Verte mi, ze uz ted je lepsi, nez byl predtim, predtim to byl HODNE velky spaghetti code; ted se aspon volaji funkce. V predchozich verzich se funkce temer nevolaly a misto nich se volalo include a pouzivaly globalni promenne.
 
 Funguje to tak, ze system predpoklada, ze je pouze jeden soubor index.php, ktery je pristupny, kteremu pres POST formular prijde $_POST[action], ktery rika, co se bude presne delat; krome toho mu pres tentyz formular prijdou parametry $_POST[par1], $_POST[par2] a pripadne $_POST[par3], ktere rikaji, jak to presne delat. Vsechny kliknuti jsou potom javascriptem zmenena na odeslani neviditelneho POST formulare.
 
@@ -40,7 +40,7 @@ Opet - cele by to nemel nikdo pouzivat, protoze je to zbesile (napr. to stale po
 ---
 
 Autori hlavniho systemu:
-Karel Bilek (2011-2013)
+Karel Bilek (2012-2013)
 Lukas Lansky (2010-2012)
 Zdenek Kavalir (kdysi davno)
 David Senkerik (mozna nejake kusy kodu odkudsi)

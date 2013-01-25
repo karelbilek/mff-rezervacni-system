@@ -76,7 +76,7 @@ EOT;
       <hr>
 
       <footer>
-        <p>Spolek Matfyzák 2013</p>
+        <p>Spolek Matfyzák 2013 - <a href=\"https://github.com/runn1ng/mff-rezervacni-system\">zdrojový kód zde</a> pod AGPLv3 licencí</p>
       </footer>
       ".
 		"</body></html>"; 
