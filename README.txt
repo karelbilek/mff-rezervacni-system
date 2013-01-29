@@ -1,7 +1,7 @@
 Matfyzacky rezervacni system
 ---
 
-Matfyzacky rezervacni system je system k rezervaci listku na zofine.
+Matfyzacky rezervacni system je system k rezervaci listku na matfyzackem plese na Zofine.
 
 V podstate neni dobry k nicemu jinemu, nez k rezervaci listku na matfyzackem plese na Zofine. A i k tomu neni zdaleka idealni.
 
@@ -13,7 +13,7 @@ Je to cele licencovano pod Affero GPLv3 licenci, informace o autorech nize. Affe
 
 Affero licence je velmi copyleftova - tj. jakmile rezervacni system nebo z nej kod odvozeny nasadite jako verejny system, tak musite zverejnit zdrojovy kod sveho produktu pod agpl.
 
-Pro tento projekt plati navic vyjimka z AGPLv3 (ktera v nem neni, ale ja jsem se pro ni rozhodl): informace o databazi (jako napriklad pristupove udaje apod.) neni nutne zverejnovat jako cast zdrojoveho kodu. 
+Pro tento projekt plati navic vyjimka z AGPLv3 (ktera v AGPLv3 neni, ale ja jsem se pro ni rozhodl): informace o databazi (jako napriklad pristupove udaje apod.) neni nutne zverejnovat jako cast zdrojoveho kodu. 
 
 ---
 
