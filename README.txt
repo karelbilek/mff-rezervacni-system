@@ -13,7 +13,7 @@ Je to cele licencovano pod Affero GPLv3 licenci, informace o autorech nize. Affe
 
 Affero licence je velmi copyleftova - tj. jakmile rezervacni system nebo z nej kod odvozeny nasadite jako verejny system, tak musite zverejnit zdrojovy kod sveho produktu pod agpl.
 
-Pro tento projekt plati navic vyjimka z AGPLv3 (ktera v AGPLv3 neni, ale ja jsem se pro ni rozhodl): informace o databazi (jako napriklad pristupove udaje apod.) neni nutne zverejnovat jako cast zdrojoveho kodu. 
+Pro tento projekt plati navic "moje" vyjimka z AGPLv3: informace o databazi (jako napriklad pristupove udaje apod.) neni nutne zverejnovat jako cast zdrojoveho kodu. 
 
 ---
 
