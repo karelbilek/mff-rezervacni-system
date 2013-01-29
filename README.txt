@@ -40,7 +40,7 @@ Opet - cele by to nemel nikdo pouzivat, protoze je to zbesile (napr. to stale po
 ---
 
 Autori hlavniho systemu:
-Karel Bilek (2012-2013)
+Karel Bilek (2011-2013)
 Lukas Lansky (2010-2012)
 Zdenek Kavalir (kdysi davno)
 David Senkerik (mozna nejake kusy kodu odkudsi)
