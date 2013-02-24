@@ -7,6 +7,8 @@ V podstate neni dobry k nicemu jinemu, nez k rezervaci listku na matfyzackem ple
 
 Bezpecny by ale mel byt. Protoze verim v jeho bezpecnost, davam jeho kod verejne.
 
+(update: kod ted na githubu je starsi verze, nez bezi naostro, az se k tomu dostanu, tak to sem pushnu)
+
 ---
 
 Je to cele licencovano pod Affero GPLv3 licenci, informace o autorech nize. Affero GPLv3 licence zde - http://www.gnu.org/licenses/agpl-3.0.html .
