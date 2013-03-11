@@ -64,14 +64,14 @@ function action_counts_on_homepage($id_spojeni, $dbPrefix, $logged_in, $user_typ
                 
                 if ($timeCheckRes == $RESERV_TOO_LATE) {
                     // konec rezervaci plati jen pro zakazniky
-                    $comment = "rezervace ukončeny";
+                    $comment = "online rezervace ukončeny ($avlib u prodejců)";
                     $allow_reserv = false;
                 } else if ($timeCheckRes == $RESERV_OK) {
                     $comment = "<span style=\"color: ".($available_count == 0 ? "red" : "green")."; \">"
                         ."volných $available_count</span> (+$avlib u prodejců)";
                     $allow_reserv = true;
                 } else {
-                    $comment = "rezervace od ".StrFTime ("%d.%m.%Y, %H:%M", $reserv_from_dt)."";
+                    $comment = "rezervace od ".StrFTime ("%d.%m.%Y, %H:%M", $reserv_from_dt)." (".timerUntil($reserv_from_dt).")";
                     $allow_reserv = false;
                 }                  
 
