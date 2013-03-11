@@ -5,7 +5,7 @@ error_reporting(-1);
 
 
 include "localSettings.php";
-
+include "texts/inc.php";
 include "actions/inc.php";
 include "dbs/inc.php";
 include "reservations/inc.php";
@@ -199,9 +199,13 @@ delOldRes($id_spojeni, $dbPrefix);
     if ($error != 0 && !($action=="welcome"||$action=="discussion")) {
         $action = "";
     }
-
-    if ($user_type!="S" and $zavreno) {
-	$HTML_main="Rezervacni system je docasne uzavren";
+    $HTML_main.="<div class='alert alert-info'><strong>Online rezervace byly ukončeny.</strong> Lístky jsou k dispozici pouze u prodejců.</div>";
+    //Online rezervace byly ukončeny
+    
+    //$HTML_main.="<div class='alert alert-info'><strong>Update!</strong> Dnes v pondělí 25.2. ve 20:00 uvolníme dalších 60 lístků na stání do prodeje, pouze 20 bude k dispozici online, zbylých 40 půjde koupit pouze u prodejců (tj. hlavně v knihovnách).</div>";
+    
+    if (($user_type!="S" and $user_type!="A") and $zavreno) {
+	    $HTML_main="Rezervacni system je docasne uzavren z duvodu udrzby. Prosime vydrzte.";
     } else {
        
 
