@@ -106,7 +106,7 @@ function action_choosen_table($mode, $customer_id,$user_id, $id_spojeni, $dbPref
 				$table_label = $arr ['table_label'];    
 				$hall_id = $arr['hall_ID'];
 
-				$reserv_to_txt = StrFTime ("%d.%m.%Y, %H:%M", $arr['reserv_to']);
+				$reserv_to_txt = StrFTime ("%d.%m.%Y, %H:%M", $arr['reserv_to'])." (".timerUntil( $arr['reserv_to']).")";
 
 				$actionOnClick = $vip?'display_vip_reservation':'display_reservation';
 				// zobraz vstupenku	
@@ -148,10 +148,11 @@ function action_choosen_table($mode, $customer_id,$user_id, $id_spojeni, $dbPref
 			
 			if ($tickets_count!=0) {
 
-			    $res .= "<div class='well'><table><tr><td style='border-right:1px solid black; '><table style='font-weight:bold; width:190px'>\n";
-			    $res .= "<tr><td>Počet vstupenek:</td><td>$tickets_count</td></tr>\n";
-			    $res .= "<tr><td>Celková cena:</td><td style='padding-right:1em;margin-right:1em'>$tickets_price Kč</td></tr>\n";
-			    $res .= "</table></td><td style='padding-left:1em'><div>Lístky si kupte buď ve vybrané knihovně (Karlov, Karlín, ???), nebo zaplaťte převodem. <br><br>Pro platbu převodem pošlete částku <b>$tickets_price Kč</b> na účet <b>670100-2205778042/6210</b> s variabilním symbolem <b>330".$customer_id."</b>. <br><br>Do knihovny je nutné donést <b>celou částku $tickets_price Kč</b>.</div></td></tr></table></div>\n";
+               /* $res .= "<div class='well'><table><tr><td style='border-right:1px solid black; '><table style='font-weight:bold; width:190px'>\n";
+                $res .= "<tr><td>Počet vstupenek:</td><td>$tickets_count</td></tr>\n";
+                $res .= "<tr><td>Celková cena:</td><td style='padding-right:1em;margin-right:1em'>$tickets_price Kč</td></tr>\n";
+                $res .= "</table></td><td style='padding-left:1em'><div>Lístky si kupte buď ve vybrané knihovně (Karlov, Karlín, ???), nebo zaplaťte převodem. <br><br>Pro platbu převodem pošlete částku <b>$tickets_price Kč</b> na účet <b>670100-2205778042/6210</b> s variabilním symbolem <b>330".$customer_id."</b>. <br><br>Do knihovny je nutné donést <b>celou částku $tickets_price Kč</b>.</div></td></tr></table></div>\n";*/
+                $res .= text_uplaceni($tickets_count, $tickets_price, $customer_id);
 			}
 			
 			$onClickNew = 
