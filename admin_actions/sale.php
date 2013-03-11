@@ -136,7 +136,7 @@ function admin_action_sale($customer_id, $id_spojeni, $dbPrefix, $user_id, $user
 			log_write("OK - sold (res_id=$ident)");
 		}
 
-		$outres.= "<table><tr><th>Místo</th><th>Stůl</th><th>Sál</th><th>Prodáno</th></tr>\n";
+		$outres.= "<table class=\"table table-striped\"><tr><th>Místo</th><th>Stůl</th><th>Sál</th><th>Prodáno</th></tr>\n";
 
 		// vypis vysledek prodeje - znovu projdi recordset 
 		//
