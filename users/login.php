@@ -100,7 +100,7 @@ $msg="";
 	          	}
 	          	else
 	    		  {
-	    			  logWrite("LOGIN successfull");
+	    			  logWrite("LOGIN successfull - user $login");
 	    		  }
 	    	}
 		}
