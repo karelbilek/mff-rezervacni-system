@@ -41,6 +41,10 @@ Opet - cele by to nemel nikdo pouzivat, protoze je to zbesile (napr. to stale po
 
 ---
 
+dulezite: proverte si overeni, jestli skutecne nikdo nemuze k souborum jako _log.txt a HLAVNE k souboru cookiefile ve slozce mbank. Jinak potom muze spoofovat vas v mbance.
+
+---
+
 Autori hlavniho systemu:
 Karel Bilek (2011-2013)
 Lukas Lansky (2010-2012)
