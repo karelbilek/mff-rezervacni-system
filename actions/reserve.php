@@ -9,7 +9,12 @@ function action_reserve($seat_array, $hall_ID, $user_to_change,  $user_id, $user
     $choosen = array();
     
 
-    
+    $statusOr = "";
+    if ($user_type=="A" || $user_type=="S") {
+        $statusOr="OR status='L'";
+    }
+   
+ 
     if ($vip && $user_type!='A') {
         return array("", null, 1, 
           "pouze admini smi upravovat VIP");
@@ -178,7 +183,7 @@ function action_reserve($seat_array, $hall_ID, $user_to_change,  $user_id, $user
   			    $deadline = GetDeadline($CANCEL_RESERVATION_AFTER);
   			        
   			    if ($user_type=='P') {
-  			        $deadline = GetDeadline(14);
+  			        $deadline = GetDeadline(25);
   			    }    
   			    
   			    if ($vip) {
@@ -194,7 +199,7 @@ function action_reserve($seat_array, $hall_ID, $user_to_change,  $user_id, $user
             UPDATE ${dbPrefix}Seats SET status = '$reservstat',customer_ID = '$user_to_change', 
             reserv_dt='$now_sql', reserv_to_dt='$deadline_sql', cancel_to_dt= '$cancel_to_sql',
             reserved_by = '$user_id'
-  					WHERE hall_ID = $hall_ID AND seat_number = $number AND status = 'A'
+  					WHERE hall_ID = $hall_ID AND seat_number = $number AND (status = 'A' $statusOr)
   					LIMIT 1";
   
   				$sqlres = mysql_query ( $sql_query, $id_spojeni );
