@@ -264,7 +264,7 @@ function reservation_info($hall_if_display, $id_spojeni, $dbPrefix) {
     $menu = ' 
           <div class="well">
           <p>
-          <table><tr><td><div class="seat" style="background-color:#99FFFF; border:1px solid black"></div></td><td> Jen u prodejců</td></tr>
+          <table><tr><td><div class="seat" style="background-color:#99FFFF; border:1px solid black"></div></td><td> Jen u prodejců (od 18.2.)</td></tr>
           <tr><td><div class="seat" style="background-color:DarkGray; border:1px solid black"></div></td><td> Prodaná či nedostupná</td></tr>
           <tr><td><div class="seat" style="background-color:yellow; border:1px solid black"></div></td><td> Volná - klik=rezervace</td></tr>
           <tr><td><div class="seat" style="background-color:red; border:1px solid black"></div></td><td> Vaše - klik=odrezervace</td></tr>
