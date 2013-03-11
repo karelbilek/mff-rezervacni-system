@@ -144,27 +144,7 @@ function createConfirmation($id_spojeni, $dbPrefix, $customer_id) {
 	else if($total_count > 1 && $total_count < 5) $morf = "vstupenky";
 	else $morf = "vstupenek";
 
-	$body = "Dobry den,
-zasilame soucasny stav Vasich rezervaci na Matfyzacky ples 2013:
-
-$ticket_res
-Celkem $total_count $morf v celkove cene $total_price Kc.
-
-Listky si kupte bud ve vybrane knihovne (Karlov, Karlin, ???) nebo zaplatte prevodem. Plati tyto oteviraci doby:
-
-Knihovna Karlov: pondeli-patek 9.00-11.00 h, 13.00-16.00 (patky jen do 15.00).
-Knihovna Karlin: pondeli-patek 8.30-18.00 (patky jen do 15.00)
-
-Vstupenky budou prodany presne podle stavu rezervace, prip. zmeny si zajemci musi provest pred koupi (napr. pres PC v knihovne). Pro hladke odbaveni prosime mejte pripravenou presnou hotovost.
-
-Pokud chcete platit prevodem, poslete $total_price Kc na ucet 670100-2205778042/6210 s variabilnim symbolem 330$customer_id . (Tyto udaje jsou take v rezervacnim systemu.)
-
-Nastanou-li jakekoliv problemy, nebudete-li si cimkoliv jisti, napiste nam!
-
-Zdravi
- Spolek Matfyzak
- ples.matfyzak.cz
-";
+	$body = text_mailem($ticket_res, $total_count, $morf, $total_price, $customer_id);
 
     return strip_shitty_dia($body);
 }
