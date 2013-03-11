@@ -5,7 +5,8 @@
 
 	function delOldRes ($id_spojeni, $dbPrefix)
 	{
-	
+        global $propadejDoKnihoven;
+
 		
 		
 		$query = "SELECT * FROM ".$dbPrefix."Seats WHERE reserv_to_dt < FROM_UNIXTIME(".time() .") AND STATUS='R'";
@@ -24,9 +25,14 @@
 			$reserve_dt = $row["reserv_dt"];
 			$reserve_to_dt = $row["reserv_to_dt"];
 			
+			if ($propadejDoKnihoven == 1) {
+			    $status = "L";
+			} else {
+			    $status = "A";
+			}
 			
 			//zmenit status v tabulce Ticket na free	
-			$m_query = "UPDATE ${dbPrefix}Seats SET status='A' WHERE seat_number=$seat AND hall_ID=$id AND status='R';";
+			$m_query = "UPDATE ${dbPrefix}Seats SET status='${status}' WHERE seat_number=$seat AND hall_ID=$id AND status='R';";
 			$v = mysql_query ( $m_query, $id_spojeni );
 			if ( $v == FALSE )
 				die ("Error writing database. $query");
@@ -44,11 +50,11 @@
 					VALUES (
 						 $seat, $id, $customer_ID, '$reserve_dt', '$reserve_to_dt', FROM_UNIXTIME(".time() .")
 					);";
-//			die($m_query);
+
 			
 			$v = mysql_query ( $m_query, $id_spojeni );
 			if ( $v == FALSE )
-				die ("Error writing database. $query");
+				die ("Error writing database. $m_query");
 			
 			
 		
