@@ -5,33 +5,8 @@ function beginsWith( $str, $sub ) {
     return ( substr( $str, 0, strlen( $sub ) ) == $sub );
 }
 
-function date_to_javascript($timestamp) {
-    return "new Date( 2013, ".StrFTime ("%m", $timestamp)."-1, ".StrFTime ("%d", $timestamp).", ".StrFTime ("%k", $timestamp).",".StrFTime ("%M", $timestamp).",".StrFTime ("%S", $timestamp).", 0)";
-}
 
-$idtimer=0;
-function timerSince($timestamp) {
-    global $idtimer;
-    $idtimer++;
-    $res = '<span id="timer'.$idtimer.'"></span>';
-    
-    $res .= '<script>$(document).ready(function() {
-		$("#timer'.$idtimer.'").countdown({since: '.date_to_javascript($timestamp).'});
-	});</script>';
-	return $res;
-}
 
-function timerUntil($timestamp) {
-    global $idtimer;
-
-    $idtimer++;
-    $res = '<span id="timer'.$idtimer.'"></span>';
-    
-    $res .= '<script>$(document).ready(function() {
-		$("#timer'.$idtimer.'").countdown({until: '.date_to_javascript($timestamp).'});
-	});</script>';
-	return $res;
-}
 
 
 function to($inet) {
@@ -104,22 +79,26 @@ GROUP BY status";
           "Error reading DB. $sql_query");
   	}
   	
-  	$res .= '<script type="text/javascript" src="js/jquery.countdown.js"></script>';
-	$res.= '<script type="text/javascript" src="js/jquery.countdown-cs.js"></script>';
+  	$res.='<a href="#rezervace">skok na rezervace</a> - ';
+  	$res.='<a href="#prodane">skok na prodané</a>';
   	$res .= '<h3>Všechny VIP rezervace</h3>';
   	$res .= '<table class="table table-striped table-condensed">'.
   	        '<thead><tr><th>.</th><th>Sál</th><th>Stůl</th><th>Jméno</th><th>Proběhla před</th></tr></thead><tbody>';
   	$i=0;
+  	$lastDt=0;
   	while ($arr = mysql_fetch_array ( $vysledek )) {
   	    $i++;
   	    $res.='<tr><td>'.$i.'</td><td>'.$arr['name'].'</td><td>'.$arr['label'].'</td><td>'.$arr['firstname'].'</td>';
   	    
-  	    $res .= '<td>'.timerSince($arr['reserv_dt']).'</td>';
-  	    
+  	    if ($lastDt!=$arr['reserv_dt']) {
+  	        $res .= '<td>'.timerSince($arr['reserv_dt']).'</td>';
+  	    } else {
+  	        $res .= '<td> -//- </td>';
+  	    }
   	    //$res .= '<td>'.timerUntil($arr['reserv_to_dt']).'</td>';
   	    
   	    //StrFTime ("%d.%m.%Y, %H:%M", $arr['reserv_to'])
-  	    
+  	    $lastDt = $arr['reserv_dt'];
   	    
   	    $res.='</tr>';
   	}
@@ -136,9 +115,9 @@ GROUP BY status";
          H.name, U.login, U.address, U.firstname, U.lastname, T.label, unix_timestamp(S.reserv_dt) AS reserv_dt, unix_timestamp(S.reserv_to_dt) AS reserv_to_dt
       FROM ${dbPrefix}Hall H
 
-        INNER JOIN ${dbPrefix}Seats S ON S.hall_ID = H.id 
-        INNER JOIN ${dbPrefix}User U ON U.id = S.customer_id 
-        INNER JOIN ${dbPrefix}Tables T ON T.hall_id = H.id AND T.table_number=S.table_number 
+        LEFT JOIN ${dbPrefix}Seats S ON S.hall_ID = H.id 
+        LEFT JOIN ${dbPrefix}User U ON U.id = S.customer_id 
+        LEFT JOIN ${dbPrefix}Tables T ON T.hall_id = H.id AND T.table_number=S.table_number 
       WHERE S.status = 'R'
       ORDER BY H.id, T.table_number";
       
@@ -152,21 +131,25 @@ GROUP BY status";
   	
   	$res .= '<script type="text/javascript" src="js/jquery.countdown.js"></script>';
 	$res.= '<script type="text/javascript" src="js/jquery.countdown-cs.js"></script>';
-  	$res .= '<h3>Všechny rezervace</h3>';
+  	$res .= '<a name="rezervace"></a><h3>Všechny rezervace</h3>';
   	$res .= '<table class="table table-striped table-condensed">'.
   	        '<thead><tr><th>.</th><th>Sál</th><th>Stůl</th><th>Uživatel</th><th>Mail</th><th>Jméno</th><th>Příjmení</th><th>Proběhla před</th><th>Vyprší za</th></tr></thead><tbody>';
   	$i=0;
+  	$lastDt=0;
   	while ($arr = mysql_fetch_array ( $vysledek )) {
   	    $i++;
   	    $res.='<tr><td>'.$i.'</td><td>'.$arr['name'].'</td><td>'.$arr['label'].'</td><td>'.$arr['login'].'</td><td>'.$arr['address'].'</td><td>'.$arr['firstname'].'</td><td>'.$arr['lastname'].'</td>';
   	    
-  	    $res .= '<td>'.timerSince($arr['reserv_dt']).'</td>';
+  	    if ($lastDt!=$arr['reserv_dt']) {
+  	        $res .= '<td>'.timerSince($arr['reserv_dt']).'</td>';
   	    //die($arr['reserv_to_dt']);
-  	    $res .= '<td>'.timerUntil($arr['reserv_to_dt']).'</td>';
-  	    
+  	        $res .= '<td>'.timerUntil($arr['reserv_to_dt']).'</td>';
+  	    } else {
+  	        $res .= '<td>-//-</td><td>-//-</td>';
+  	    }
   	    //StrFTime ("%d.%m.%Y, %H:%M", $arr['reserv_to'])
   	    
-  	    
+  	    $lastDt = $arr['reserv_dt'];
   	    $res.='</tr>';
   	}
     $res .= '</tbody></table>';
@@ -193,10 +176,11 @@ GROUP BY status";
           "Error reading DB. $sql_query");
   	}
   	
-  	$res .= '<h3>Všechny prodané lístky</h3>';
+  	$res .= '<a name="prodane"></a><h3>Všechny prodané lístky</h3>';
   	$res .= '<table class="table table-striped table-condensed">'.
   	        '<thead><tr><th>.</th><th>Sál</th><th>Stůl</th><th>Uživatel</th><th>Mail</th><th>Jméno</th><th>Příjmení</th><th>Prodáno před</th></tr></thead><tbody>';
   	$i=0;
+  	$lastDt=0;
   	while ($arr = mysql_fetch_array ( $vysledek )) {
   	    $i++;
   	    $res.='<tr><td>'.$i.'</td><td>'.$arr['name'].'</td><td>'.$arr['label'].'</td><td>';
@@ -211,9 +195,13 @@ GROUP BY status";
   	    
   	    $res.='</td><td>'.$arr['address'].'</td><td>'.$arr['firstname'].'</td><td>'.$arr['lastname'].'</td>';
   	    
-  	    $res .= '<td>'.timerSince($arr['sold_dt']).'</td>';
+  	    if ($lastDt!=$arr['sold_dt']) {
+  	        $res .= '<td>'.timerSince($arr['sold_dt']).'</td>';
+  	    } else {
+  	        $res .= '<td>-//-</td>';
+  	    }
   	    
-  	    
+  	    $lastDt = $arr['sold_dt'];
   	    //StrFTime ("%d.%m.%Y, %H:%M", $arr['reserv_to'])
   	    
   	    
