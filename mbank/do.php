@@ -8,7 +8,7 @@ include "../dbs/inc.php";
 include "../localSettings.php";
 
 //hack, nutno nastavit na online usera
-$onlineuser = 45;
+$onlineuser = 51;
 
 include "../reservations/delOldRes.php";
 
@@ -55,7 +55,16 @@ function get_free_barcode($id_spojeni , $dbPrefix) {
 	            return $barcode;
 }
 
+
 foreach ($array as $customer_id=>$castka) {
+
+     #chyby
+     #a jejich ad-hoc doresovani
+     #if ($customer_id==218) {
+     
+     #    $castka=1200;
+     #}
+
 
     $sql_user = "SELECT U.login, U.firstname, U.lastname, U.address FROM ".
                 "${dbPrefix}User U WHERE U.id = $customer_id;";
