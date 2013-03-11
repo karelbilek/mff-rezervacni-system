@@ -22,7 +22,7 @@ function sendConfirmation($conn, $customer_id, $subject, $body, $dbPrefix)
 				return $MAIL_NO_ADDRESS;
 			}
 
-			$from = 'spolek@matfyzak.cz';
+			$from = 'ples@matfyzak.cz';
 			$date = date('r');
 			$headers = "From: $from\r\n"
 				."Date: $date\r\n"
