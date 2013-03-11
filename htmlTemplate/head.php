@@ -65,6 +65,8 @@ EOT;
 </script>
 </head>
 <body>
+<script type="text/javascript" src="js/jquery.countdown.js"></script>
+<script type="text/javascript" src="js/jquery.countdown-cs.js"></script>
         
 EOT;
     $e = "</div>". //<#content>
@@ -76,11 +78,41 @@ EOT;
       <hr>
 
       <footer>
-        <p>Spolek Matfyzák 2013 - <a href=\"https://github.com/runn1ng/mff-rezervacni-system\">zdrojový kód zde</a> pod AGPLv3 licencí</p>
+        <p><a href=\"http://matfyzak.cz\">Spolek Matfyzák 2013</a> <br> <a href=\"https://github.com/runn1ng/mff-rezervacni-system\">zdrojový kód</a> pod AGPLv3 licencí</p>
       </footer>
       ".
 		"</body></html>"; 
     return array($h,$e);
 }
+
+$idtimer=0;
+function timerSince($timestamp) {
+    global $idtimer;
+    $idtimer++;
+    $res = '<span id="timer'.$idtimer.'"></span>';
+    
+    $res .= '<script>$(document).ready(function() {
+		$("#timer'.$idtimer.'").countdown({since: '.date_to_javascript($timestamp).'});
+	});</script>';
+	return $res;
+}
+
+function timerUntil($timestamp) {
+    global $idtimer;
+
+    $idtimer++;
+    $res = '<span id="timer'.$idtimer.'"></span>';
+    
+    $res .= '<script>$(document).ready(function() {
+		$("#timer'.$idtimer.'").countdown({until: '.date_to_javascript($timestamp).'});
+	});</script>';
+	return $res;
+}
+
+function date_to_javascript($timestamp) {
+    return "new Date( 2013, ".StrFTime ("%m", $timestamp)."-1, ".StrFTime ("%d", $timestamp).", ".StrFTime ("%k", $timestamp).",".StrFTime ("%M", $timestamp).",".StrFTime ("%S", $timestamp).", 0)";
+}
+
+
 ?>
 
