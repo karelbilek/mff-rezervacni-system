@@ -27,6 +27,8 @@ $TICKET_COUNT_LIMIT = 10;
 $zavreno = 0;
 
 
+$propadejDoKnihoven = 1;
+
 //zacatek akce (skoro k nicemu to neni)
 $opening_dt = mktime(19,30,0, 3, 6, 2013);
 
